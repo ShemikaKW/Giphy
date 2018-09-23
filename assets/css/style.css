@@ -4,12 +4,13 @@ body {
 }
 
 h1 {
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	text-shadow: 1px 1px black;
 	font-weight: bold;
 }
 
-button {
-  background-color: navy;
+button.superhero-button{
+  background-color: red;
   color: white;
   margin: 5px;
   padding: 3px 15px;
@@ -22,7 +23,7 @@ button {
 
 p {
 	color: black;
-	margin-top: 40px;
+	margin-top: 30px;
     line-height: 3px;
     
 }
@@ -34,54 +35,37 @@ form {
 }
 
 #add-superhero {
-	background-color: navy;
+	background-color: red;
 	color: white;
 	margin-top: 20px;
 	padding: 5px 15px;
 }
 
-h5 {
-	color: black;
-	font-weight: normal;
-	margin-left: 5px;
-	margin-top: 20px;
-}
-
-.superhero-button{
-    color: coral;
-}
 
 .item {
 	margin-right: 20px;
 }
 
 .gif {
-	border: 4px solid navy;
+	border: 1px solid black;
 }
 
 /* Responsiveness with @Media */
-@media screen and (max-width: 640px) {
+ @media screen and (max-width: 640px) {
 
-	h6 {
-		margin-top: 30px;
-	}
-
-	form {
+	
+	#superhero-form {
 		margin-top: 20px;
 	}
 
-}
+} 
 
-/* @media only screen and (max-width: 740px) { */
-    /* #form-zone {        
+@media only screen and (max-width: 740px) { 
+    #superhero-form {        
         width:100%;
         border-bottom-left-radius: 0px;
         height:94px;
     }
-    #gif-area{
-        position: relative;
-        width:100%;
-        top:170px;
-    }
+    
    
-} */
+}

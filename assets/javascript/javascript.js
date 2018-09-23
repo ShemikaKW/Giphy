@@ -3,18 +3,18 @@
 var topics = ["Batman", "Superman", "Daredevil", "Aquaman", "Spiderman", "Black Panther", "Luke Cage"];
 
 
-
 // Functions
 
 function createButtons () {
-
+    // Empty the buttons
     $("#button-area").empty();
-
+   
+    
 
     for (var i = 0; i < topics.length; i++){
         var newButton = $("<button>");
         newButton.addClass("superhero-button");
-        newButton.attr("data-superhero", topics[i]);
+        newButton.attr("data-name", topics[i]);
         newButton.text(topics[i]);
         $("#button-area").append(newButton);
         // Testing
@@ -26,9 +26,12 @@ function createButtons () {
 function displayImages (){
 
     $("#gifs-images").empty();
-    $(".item").empty();
+    // $("#gifs-images").remove();
+    
+    
 
-    var superhero = $(this).attr("data-superhero");
+
+    var superhero = $(this).attr("data-name");
     
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + superhero + "&api_key=sCp50VxKTHKEjlDU6kC615usEOOPDrnF&limit=25";
 
@@ -38,6 +41,7 @@ function displayImages (){
     method: "GET"
     })
 
+    
     .then(function(response){
        
         var results = response.data;
@@ -81,7 +85,6 @@ function displayImages (){
           //put image and image div on browser
           $("#gifs-image").prepend(imgDiv);
 
-            
                  
       }
 //Click function to play gif
@@ -110,11 +113,14 @@ $("#add-superhero").on("click", function(event) {
 //form used so that the user can hit enter instead of clicking the button if they want
 event.preventDefault();
 
+
 //grab the text from the input box and trim any extra spaces entered
 var newTopic = $("#superhero-input").val().trim();
 
 //takes superhero entered from the textbox and adds it to our array of topics
 topics.push(newTopic);
+
+
 
 // call createButtons which handles the processing of topics
 createButtons();
@@ -126,6 +132,9 @@ createButtons();
 
 // click event on the superhero-button to listen for which superhero user pics
 $(document).on("click", ".superhero-button", displayImages);
+
+
+   
 
     
 
