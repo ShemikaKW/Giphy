@@ -41,6 +41,10 @@ form {
 	padding: 5px 15px;
 }
 
+#message{
+	color: red;
+	font-size: 20px;
+}
 
 .item {
 	margin-right: 20px;
@@ -48,6 +52,15 @@ form {
 
 .gif {
 	border: 1px solid black;
+	height: 150px;
+	width:300px;
+	
+}
+.image-container{
+	height: 200px;
+	width:300px;
+	display: inline-block;
+	margin-right: 20px;
 }
 
 /* Responsiveness with @Media */
